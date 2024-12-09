@@ -1,0 +1,18 @@
+<div>
+    <h2>Generate QR Code</h2>
+    <input [(ngModel)]="qrData" placeholder="Enter data for QR Code">
+    <button (click)="generateQRCode()">Generate</button>
+  
+    <h3>Generated QR Codes</h3>
+    <div *ngFor="let code of qrCodes">
+      <img [src]="code.qrImage" alt="QR Code">
+    </div>
+  
+    <h2>Validate QR Code</h2>
+    <input [(ngModel)]="scannedData" placeholder="Scan QR Code Data">
+    <button (click)="validateQRCode()">Validate</button>
+    <p>{{ validationMessage }}</p>
+
+  </div>
+  <app-qr-code-scanner></app-qr-code-scanner>
+  
